@@ -157,6 +157,7 @@ options     head
 	# -*- coding: utf-8 -*-
 	import configparser
 	import logging
+	
 	class ${1:#:cname}():
 		def __init__(self, logger=None, options=None):
 			if logger is None:
@@ -214,3 +215,23 @@ options     head
 		allEndTP = time.time()
 		logger.info("Operation Finished [Time Cost:%0.3f Seconds]" % float(allEndTP - allStartTP))
 
+snippet     mod3
+abbr        Module template for python3
+options     head
+	# -*- coding: utf-8 -*-
+	import logging
+	
+	class ${1:#:cname}():
+		def __init__(self, logger=None, options=None):
+			if logger is None:
+				self.logger = logging.getLogger()
+			else:
+				self.logger = logger
+			if options is None:
+				self.options = [] 
+			else:
+				self.options =options 
+	
+		def process(self):
+			options = self.options
+			pass
